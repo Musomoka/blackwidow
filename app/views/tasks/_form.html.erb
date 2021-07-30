@@ -1,0 +1,53 @@
+<div class="container">
+<div class="row">
+<div class="col s12">
+
+
+<%= form_with(model: task) do |form| %>
+  <% if task.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>
+
+      <ul>
+        <% task.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="input-field s10">
+    <%= form.label :taskName %>
+    <%= form.text_field :taskName %>
+  </div>
+
+  <div class="input-field s10">
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+  </div>
+
+  <div class="input-field s10">
+    <%= form.label :startDate %>
+    <%= form.date_select :startDate %>
+  </div>
+
+  <div class="input-field s10">
+    <%= form.label :endDate %>
+    <%= form.date_select :endDate %>
+  </div>
+
+  <div class="input-field s10">
+    <%= form.label :business_id %>
+    <%= form.text_field :business_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit, class: "waves-effect waves-light btn" %>
+  </div>
+
+  
+<% end %>
+
+</div>
+</div>
+</div>

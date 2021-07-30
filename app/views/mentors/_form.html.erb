@@ -1,0 +1,33 @@
+<div class="container">
+<div class="row">
+<div class="col s12">
+<%= simple_form_for @mentor do |form| %>
+  <% if mentor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(mentor.errors.count, "error") %> prohibited this mentor from being saved:</h2>
+
+      <ul>
+        <% mentor.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="input-field col s10  ">
+    <%= form.label "Select User" %>
+<%= form.association :user, collection: @user, label_method: :full_name, value_method: :id%>
+  </div>
+  <div class="input-field col s10  ">
+    <%= form.text_area :descritpion%>
+    <%= form.label :descritpion %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+</div>
+</div>
+</div>
+

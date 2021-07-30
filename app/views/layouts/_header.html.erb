@@ -1,0 +1,29 @@
+<nav>
+    <div class="nav-wrapper pink darken-2">
+      <a href="#!" class="brand-logo">Kula Girls</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li> <%=link_to "Home", root_path %></li>
+        <li> <%=link_to "Business List", businesses_path %></li>
+        
+        <%if current_user%>
+            <li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete  %> </li>
+            <li><%= link_to full_name(current_user) ,root_path %></li>
+        <%else%>
+            <li><%= link_to "Sign In", new_user_session_url %> </li>
+            <%end%>
+      </ul>
+    </div>
+  </nav>
+
+  <ul class="sidenav" id="mobile-demo">
+    <li> <%=link_to "Home", root_path %></li>
+        <li> <%=link_to "Businesses", businesses_path %></li>
+        
+        <%if current_user%>
+            <li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete  %> </li>
+            <li><%= link_to full_name(current_user) ,root_path %></li>
+        <%else%>
+            <li><%= link_to "Sign In", new_user_session_url %> </li>
+            <%end%>
+  </ul>

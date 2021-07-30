@@ -1,0 +1,9 @@
+<%= @user.firstName%>
+
+<% if @mentors %>
+  <%= link_to 'Mentor ', user_mentors_path, class:"waves-effect waves-light btn" %>
+<% end %>
+<% if @businesses%>
+    <%link_to Businesses, user_businesses_path%>
+<%end%>
+

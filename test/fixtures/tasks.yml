@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  taskName: MyString
+  description: MyString
+  startDate: 2021-07-22
+  endDate: 2021-07-22
+  business: one
+
+two:
+  taskName: MyString
+  description: MyString
+  startDate: 2021-07-22
+  endDate: 2021-07-22
+  business: two
